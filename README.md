@@ -15,6 +15,7 @@
 
 # 函数功能：
 ### 成交类型与方向计算
+```{
 def get_accurate_trade_direction(
         today_ticks: np.ndarray,  # 当日所有tick的结构化数组
         preday_tick: np.ndarray = None,  # 提供昨日tick可以计算竞价方法（但是其实没什么用）
@@ -22,14 +23,15 @@ def get_accurate_trade_direction(
         full_output: bool = True,  # 是否返回完所有字段
         label: bool = False  # 是否将9个成交类型、三个成交方向从数字映射为文本
 ) -> np.ndarray：#  该接口返回数据完整，可用于盘口可视化，
-
+}```
+```{
 def get_accurate_direction_only(
         today_ticks: np.ndarray,
         preday_tick: np.ndarray = None,
         exchange: str = "default",
         label: bool = False  
 ) -> np.ndarray:# 只计算成交方向，返回-1,0,1三种成交方向。用于实时量化策略计算。
-
+}```
 ### 多空计算引擎
 计算并返回指定周期的多空净量，CPU缓存级优化。支持1s、5s、15s、30s、1min、5min、15min、30min、1h、day、week、month。虽然大周期的没啥用就是了。
 一般推荐numba模式，1分钟周期的5万条tick计算平均耗时0.000274s，50万条耗时0.005170s。超大数据量时推荐polars模式。
