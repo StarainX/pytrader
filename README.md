@@ -49,6 +49,9 @@ def calculate_net_volume(
         engine_threshold: int = 700000  # 阈值参数
 ) -> np.ndarray:  自动分发引擎
 ```
+可以根据性能测试结果手动选择合适引擎：
+![image](https://github.com/user-attachments/assets/0e3227b9-9d3b-4013-b654-c715758dab35)
+
 
 ### Tick级数据重采样
 这部分就没啥说的了，组合了下polars的功能。
